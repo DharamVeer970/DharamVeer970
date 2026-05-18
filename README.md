@@ -1,131 +1,152 @@
-<h1 align="center">Hi 👋, I'm Dharamveer</h1>
-<h3 align="center">Agentic AI Engineer | Full Stack Developer | AI Automation Builder</h3>
+<div align="center">
+
+# Hi 👋 I'm Dharamveer
+
+### 🤖 Agentic AI Engineer | AI Automation Builder | Multi-Agent Systems Developer
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&center=true&vCenter=true&width=800&lines=Building+Agentic+AI+Systems;Developing+Multi-Agent+Workflows;LangGraph+%7C+FastAPI+%7C+MCP+Tools;AI+Automation+Engineer" />
+
+</div>
 
 ---
 
-## 🚀 Current Focus
+# 🧠 About Me
 
-🔹 Building Agentic AI Systems using LangGraph and FastAPI  
-🔹 Developing AI-powered automation workflows and MCP tools  
-🔹 Exploring Multi-Agent Architectures and LLM Orchestration  
-🔹 Working on scalable AI applications with memory and tool calling  
+```yaml
+Name: Dharam Veer
+Role: Agentic AI Engineer
+Focus:
+  - Multi-Agent Systems
+  - AI Workflow Automation
+  - LLM Orchestration
+  - MCP Tool Integrations
+  - AI Infrastructure
 
----
-
-## 👨‍💻 About Me
-
-💡 Passionate about building intelligent AI systems and real-world applications.
-
-I specialize in:
-- Agentic AI
-- Multi-Agent Systems
-- Full Stack Development
-- AI Workflow Automation
-- LLM Integrations
-
-I enjoy creating AI products that can think, reason, use tools, and automate tasks.
+Currently_Building:
+  - AI Agent Orchestration Systems
+  - Memory-Enabled AI Workflows
+  - AI Invoice Auditor
+  - Autonomous AI Pipelines
+```
 
 ---
 
-## 🛠️ Tech Stack
+# ⚡ Tech Arsenal
 
 ### 💻 Languages
-- Python
-- Java
-- JavaScript
-- SQL
+![Python](https://img.shields.io/badge/Python-111?style=for-the-badge&logo=python)
+![Java](https://img.shields.io/badge/Java-111?style=for-the-badge&logo=openjdk)
+![JavaScript](https://img.shields.io/badge/JavaScript-111?style=for-the-badge&logo=javascript)
+![SQL](https://img.shields.io/badge/SQL-111?style=for-the-badge&logo=mysql)
 
-### ⚡ AI & Backend
-- LangChain
+---
+
+### 🧠 AI & Backend
+![LangChain](https://img.shields.io/badge/LangChain-111?style=for-the-badge)
+![LangGraph](https://img.shields.io/badge/LangGraph-111?style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/FastAPI-111?style=for-the-badge&logo=fastapi)
+![Flask](https://img.shields.io/badge/Flask-111?style=for-the-badge&logo=flask)
+![OpenAI](https://img.shields.io/badge/OpenAI-111?style=for-the-badge&logo=openai)
+![Docker](https://img.shields.io/badge/Docker-111?style=for-the-badge&logo=docker)
+
+---
+
+# 🧩 Agentic AI Architecture
+
+```text
+User Query
+     ↓
+Intent Classification Agent
+     ↓
+Router / Orchestrator Agent
+     ↓
+Memory + Tool Calling + APIs
+     ↓
+Specialized AI Agents
+     ↓
+Response Refinement
+     ↓
+Final AI Response
+```
+
+---
+
+# 🚀 Featured Projects
+
+## 🤖 AI Agent Orchestration System
+Multi-agent workflow engine using:
 - LangGraph
 - FastAPI
-- Flask
-- OpenAI APIs
-- Google ADK
-- MCP Tools
-- REST APIs
-
-### 🌐 Frontend
-- React.js
-- HTML
-- CSS
-- TailwindCSS
-
-### 🗄️ Database & Cloud
-- MongoDB
-- MySQL
-- Firebase
-- Appwrite
-
-### 🧰 Tools
-- Git
-- GitHub
-- VS Code
-- Postman
-- Docker
+- Tool Calling
+- Memory Handling
+- AI Routing
+- Parallel Execution
 
 ---
 
-## 🚀 Featured Projects
+## 🧾 AI Invoice Auditor
+AI-powered invoice validation and auditing platform.
 
-### 🤖 AI Agent Orchestration System
-Built an intelligent multi-agent workflow system using LangGraph and FastAPI with:
-- Intent classification
-- Tool calling
-- Memory handling
-- Parallel execution
-- AI routing
-
----
-
-### 💬 TalkEasy – Conversational AI System
-AI chatbot platform developed using:
-- Python
-- Flask
-- OpenAI APIs
-- MongoDB
-
-Features:
-- Intelligent Q&A
-- Persistent chat storage
-- Context-aware responses
+### Features
+✔ Invoice Extraction  
+✔ AI Validation  
+✔ Fraud Detection  
+✔ Workflow Automation  
+✔ Intelligent Verification  
 
 ---
 
-### 🩺 Cancer Detection using Machine Learning
-Machine learning-based system for cancer prediction and classification using data preprocessing and ML algorithms.
+## 💬 TalkEasy – Conversational AI
+Context-aware AI assistant with persistent memory and intelligent responses.
 
 ---
 
-### 🏦 ATM Management System
-Java-based banking application with:
-- Authentication
-- Database connectivity
-- Transaction handling
+## 🩺 Cancer Detection using ML
+Machine learning-based cancer prediction and classification system.
 
 ---
 
-### 🌐 Blogging Website
-MERN + Appwrite powered blogging platform with authentication and cloud storage.
+# 🌍 Current Focus
+
+🚀 Building scalable AI systems  
+🧠 Exploring autonomous agents  
+⚡ Designing AI orchestration pipelines  
+🔄 Creating memory-enabled workflows  
+🛠️ Integrating MCP tools with AI systems  
 
 ---
 
-## 🏆 Achievements
+# 🏆 Achievements
 
-🏅 House Leader – Aarohan 2025 at Poornima College of Engineering  
-🏅 Solved multiple DSA and competitive programming problems  
-🏅 Built multiple AI and Full Stack projects  
-
----
-
-
-## 🌐 Connect With Me
-
-📧 Email: dharamveeer4@gmail.com  
-💼 LinkedIn: https://www.linkedin.com/in/dharam-veer-657711226/   
+🏅 House Leader – Aarohan 2025  
+🏅 Built multiple AI-powered systems  
+🏅 Strong DSA & System Design background  
+🏅 Passionate about AI infrastructure engineering  
 
 ---
 
-## ⚡ Fun Fact
+# 🌐 Connect With Me
 
-I love building AI agents that can think, act, and automate real-world workflows 🚀
+<p align="center">
+
+<a href="mailto:dharamveeer4@gmail.com">
+<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://www.linkedin.com/in/dharam-veer-657711226/">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="https://github.com/DharamVeer970">
+<img src="https://img.shields.io/badge/GitHub-111?style=for-the-badge&logo=github"/>
+</a>
+
+</p>
+
+---
+
+<div align="center">
+
+### ⚡ "Building AI systems that can think, reason, and automate."
+
+</div>
