@@ -119,8 +119,7 @@ Machine learning-based cancer prediction and classification system.
 # 🏆 Achievements
 
 🏅 House Leader – Aarohan 2025  
-🏅 Built multiple AI-powered systems  
-🏅 Strong DSA & System Design background  
+🏅 Built multiple AI-powered systems   
 🏅 Passionate about AI infrastructure engineering  
 
 ---
