@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi 👋 I'm Dharamveer
+# Hi 👋 I'm Dharam Veer
 
 ### 🤖 Agentic AI Engineer | AI Automation Builder | Multi-Agent Systems Developer
 
@@ -15,6 +15,7 @@
 ```yaml
 Name: Dharam Veer
 Role: Agentic AI Engineer
+
 Focus:
   - Multi-Agent Systems
   - AI Workflow Automation
@@ -31,23 +32,67 @@ Currently_Building:
 
 ---
 
+# 🔭 Currently Working On
+
+- Multi-Agent AI Orchestrator
+- AI Invoice Auditing System
+- LangGraph Workflow Pipelines
+- MCP Tool Integrations
+- Autonomous AI Workflows
+
+---
+
+# 🧠 Core Expertise
+
+✔ Agentic AI  
+✔ Multi-Agent Systems  
+✔ LangGraph Workflows  
+✔ AI Orchestration  
+✔ Tool Calling Systems  
+✔ AI Memory Architectures  
+✔ FastAPI AI Backends  
+✔ MCP Integrations  
+
+---
+
 # ⚡ Tech Arsenal
 
 ### 💻 Languages
+
 ![Python](https://img.shields.io/badge/Python-111?style=for-the-badge&logo=python)
 ![Java](https://img.shields.io/badge/Java-111?style=for-the-badge&logo=openjdk)
 ![JavaScript](https://img.shields.io/badge/JavaScript-111?style=for-the-badge&logo=javascript)
 ![SQL](https://img.shields.io/badge/SQL-111?style=for-the-badge&logo=mysql)
 
----
-
 ### 🧠 AI & Backend
+
 ![LangChain](https://img.shields.io/badge/LangChain-111?style=for-the-badge)
 ![LangGraph](https://img.shields.io/badge/LangGraph-111?style=for-the-badge)
 ![FastAPI](https://img.shields.io/badge/FastAPI-111?style=for-the-badge&logo=fastapi)
 ![Flask](https://img.shields.io/badge/Flask-111?style=for-the-badge&logo=flask)
 ![OpenAI](https://img.shields.io/badge/OpenAI-111?style=for-the-badge&logo=openai)
 ![Docker](https://img.shields.io/badge/Docker-111?style=for-the-badge&logo=docker)
+![MCP](https://img.shields.io/badge/MCP-111?style=for-the-badge)
+![REST API](https://img.shields.io/badge/REST_API-111?style=for-the-badge)
+
+### 🌐 Frontend
+
+![React](https://img.shields.io/badge/React-111?style=for-the-badge&logo=react)
+![HTML](https://img.shields.io/badge/HTML-111?style=for-the-badge&logo=html5)
+![CSS](https://img.shields.io/badge/CSS-111?style=for-the-badge&logo=css3)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-111?style=for-the-badge&logo=tailwindcss)
+
+### 🗄️ Database & Cloud
+
+![MongoDB](https://img.shields.io/badge/MongoDB-111?style=for-the-badge&logo=mongodb)
+![MySQL](https://img.shields.io/badge/MySQL-111?style=for-the-badge&logo=mysql)
+
+### 🧰 Tools
+
+![Git](https://img.shields.io/badge/Git-111?style=for-the-badge&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-111?style=for-the-badge&logo=github)
+![VS Code](https://img.shields.io/badge/VS_Code-111?style=for-the-badge&logo=visualstudiocode)
+![Postman](https://img.shields.io/badge/Postman-111?style=for-the-badge&logo=postman)
 
 ---
 
@@ -74,35 +119,45 @@ Final AI Response
 # 🚀 Featured Projects
 
 ## 🤖 AI Agent Orchestration System
+
 Multi-agent workflow engine using:
-- LangGraph
-- FastAPI
-- Tool Calling
-- Memory Handling
-- AI Routing
-- Parallel Execution
+- LangGraph orchestration
+- Tool calling
+- Memory handling
+- AI routing
+- Parallel execution
+- FastAPI backend
 
 ---
 
 ## 🧾 AI Invoice Auditor
-AI-powered invoice validation and auditing platform.
 
-### Features
-✔ Invoice Extraction  
-✔ AI Validation  
-✔ Fraud Detection  
-✔ Workflow Automation  
-✔ Intelligent Verification  
+AI-powered invoice validation and auditing platform featuring:
+- Intelligent invoice extraction
+- AI validation workflows
+- Fraud detection
+- Workflow automation
+- Intelligent verification systems
 
 ---
 
 ## 💬 TalkEasy – Conversational AI
-Context-aware AI assistant with persistent memory and intelligent responses.
+
+Context-aware AI assistant with:
+- Persistent memory
+- Intelligent Q&A
+- OpenAI integration
+- MongoDB storage
 
 ---
 
 ## 🩺 Cancer Detection using ML
-Machine learning-based cancer prediction and classification system.
+
+Machine learning-based system for:
+- Cancer prediction
+- Data preprocessing
+- Model training
+- Classification analysis
 
 ---
 
@@ -119,7 +174,7 @@ Machine learning-based cancer prediction and classification system.
 # 🏆 Achievements
 
 🏅 House Leader – Aarohan 2025  
-🏅 Built multiple AI-powered systems   
+🏅 Built multiple AI-powered systems  
 🏅 Passionate about AI infrastructure engineering  
 
 ---
