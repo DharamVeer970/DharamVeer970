@@ -118,27 +118,11 @@ MERN + Appwrite powered blogging platform with authentication and cloud storage.
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=DharamVeer970&show_icons=true&theme=tokyonight" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=DharamVeer970&theme=tokyonight" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DharamVeer970&layout=compact&theme=tokyonight" />
-</p>
-
----
 
 ## 🌐 Connect With Me
 
-📧 Email: your-email@gmail.com  
-💼 LinkedIn: Your LinkedIn URL  
-🌐 Portfolio: Your Portfolio URL  
+📧 Email: dharamveeer4@gmail.com  
+💼 LinkedIn: https://www.linkedin.com/in/dharam-veer-657711226/   
 
 ---
 
