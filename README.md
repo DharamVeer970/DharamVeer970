@@ -207,6 +207,10 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 <div align="center">
 
+<!-- Flagship repo: DharamVeer970/Wilco. Its name is baked into the badge URLs
+     below and into the language row further down. Renaming the repo means
+     updating every one of those URLs together. -->
+
 <img src="https://img.shields.io/github/followers/DharamVeer970?style=for-the-badge&logo=github&logoColor=white&label=Followers&labelColor=161b22&color=1f6feb" alt="GitHub followers" />
 <img src="https://img.shields.io/github/stars/DharamVeer970/Wilco?style=for-the-badge&logo=github&logoColor=white&label=Wilco%20stars&labelColor=161b22&color=8957e5" alt="Stars on Wilco" />
 <img src="https://img.shields.io/github/last-commit/DharamVeer970/Wilco?style=for-the-badge&logo=git&logoColor=white&label=Last%20commit&labelColor=161b22&color=238636" alt="Last commit to Wilco" />
