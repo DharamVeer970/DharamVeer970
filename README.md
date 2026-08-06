@@ -207,18 +207,16 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=DharamVeer970&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&bg_color=0d1117&title_color=8957e5&icon_color=1f6feb&text_color=c9d1d9" />
-  <img src="https://github-readme-stats.vercel.app/api?username=DharamVeer970&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&title_color=8957e5&icon_color=1f6feb" height="165" alt="GitHub stats" />
-</picture>
+<img src="https://img.shields.io/github/followers/DharamVeer970?style=for-the-badge&logo=github&logoColor=white&label=Followers&labelColor=161b22&color=1f6feb" alt="GitHub followers" />
+<img src="https://img.shields.io/github/stars/DharamVeer970/Wilco?style=for-the-badge&logo=github&logoColor=white&label=Wilco%20stars&labelColor=161b22&color=8957e5" alt="Stars on Wilco" />
+<img src="https://img.shields.io/github/last-commit/DharamVeer970/Wilco?style=for-the-badge&logo=git&logoColor=white&label=Last%20commit&labelColor=161b22&color=238636" alt="Last commit to Wilco" />
+<img src="https://img.shields.io/github/languages/top/DharamVeer970/Wilco?style=for-the-badge&logo=python&logoColor=white&label=Wilco&labelColor=161b22&color=3776AB" alt="Top language in Wilco" />
+
+<br/><br/>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=DharamVeer970&hide_border=true&background=0d1117&stroke=30363d&ring=8957e5&fire=1f6feb&currStreakLabel=8957e5&sideLabels=c9d1d9&dates=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9" />
   <img src="https://streak-stats.demolab.com?user=DharamVeer970&hide_border=true&ring=8957e5&fire=1f6feb&currStreakLabel=8957e5" height="165" alt="Contribution streak" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=DharamVeer970&layout=compact&hide_border=true&langs_count=8&bg_color=0d1117&title_color=8957e5&text_color=c9d1d9" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DharamVeer970&layout=compact&hide_border=true&langs_count=8&title_color=8957e5" height="150" alt="Top languages" />
 </picture>
 
 <picture>
@@ -239,22 +237,8 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 > then commits only if something actually changed. My README maintains itself.
 
 <!-- AGENT-LOG:START -->
-<div align="center"><i>⏳ Waiting for first agent run — trigger the <b>Profile Agent</b> workflow to populate this section.</i></div>
+<div align="center"><sub>Next agent run pending.</sub></div>
 <!-- AGENT-LOG:END -->
-
----
-
-## `>` Contribution graph, eaten
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" />
-  <img src="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" alt="Contribution snake animation" />
-</picture>
-
-</div>
 
 ---
 
