@@ -112,7 +112,8 @@ def language_bar(repos: list[dict]) -> list[str]:
     counts: dict[str, int] = {}
     for repo in repos:
         name = repo.get("language")
-        if name and repo["name"] not in SKIP_REPOS:
+        repo_name = repo.get("name")
+        if name and repo_name and repo_name not in SKIP_REPOS:
             counts[name] = counts.get(name, 0) + 1
 
     if not counts:
