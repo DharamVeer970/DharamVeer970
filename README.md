@@ -210,7 +210,6 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 <img src="https://img.shields.io/github/followers/DharamVeer970?style=for-the-badge&logo=github&logoColor=white&label=Followers&labelColor=161b22&color=1f6feb" alt="GitHub followers" />
 <img src="https://img.shields.io/github/stars/DharamVeer970/Wilco?style=for-the-badge&logo=github&logoColor=white&label=Wilco%20stars&labelColor=161b22&color=8957e5" alt="Stars on Wilco" />
 <img src="https://img.shields.io/github/last-commit/DharamVeer970/Wilco?style=for-the-badge&logo=git&logoColor=white&label=Last%20commit&labelColor=161b22&color=238636" alt="Last commit to Wilco" />
-<img src="https://img.shields.io/github/languages/top/DharamVeer970/Wilco?style=for-the-badge&logo=python&logoColor=white&label=Wilco&labelColor=161b22&color=3776AB" alt="Top language in Wilco" />
 
 <br/><br/>
 
@@ -218,6 +217,21 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=DharamVeer970&hide_border=true&background=0d1117&stroke=30363d&ring=8957e5&fire=1f6feb&currStreakLabel=8957e5&sideLabels=c9d1d9&dates=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9" />
   <img src="https://streak-stats.demolab.com?user=DharamVeer970&hide_border=true&ring=8957e5&fire=1f6feb&currStreakLabel=8957e5" height="165" alt="Contribution streak" />
 </picture>
+
+<br/><br/>
+
+<sub><b>PRIMARY LANGUAGE PER PROJECT</b> — read live from the GitHub API</sub>
+
+<br/>
+
+<a href="https://github.com/DharamVeer970/Wilco"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Wilco?style=flat-square&label=Wilco&labelColor=161b22&color=8957e5" alt="Top language in Wilco" /></a>
+<a href="https://github.com/DharamVeer970/Cancer_treatment_Project"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Cancer_treatment_Project?style=flat-square&label=Cancer%20ML&labelColor=161b22&color=8957e5" alt="Top language in Cancer Treatment ML" /></a>
+<a href="https://github.com/DharamVeer970/Stock_management_system"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Stock_management_system?style=flat-square&label=Stock%20System&labelColor=161b22&color=8957e5" alt="Top language in Stock Management System" /></a>
+<a href="https://github.com/DharamVeer970/Chatgpt-Clone"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Chatgpt-Clone?style=flat-square&label=ChatGPT%20Clone&labelColor=161b22&color=8957e5" alt="Top language in ChatGPT Clone" /></a>
+<a href="https://github.com/DharamVeer970/House_Price_Prediction"><img src="https://img.shields.io/github/languages/top/DharamVeer970/House_Price_Prediction?style=flat-square&label=House%20Prices&labelColor=161b22&color=8957e5" alt="Top language in House Price Prediction" /></a>
+<a href="https://github.com/DharamVeer970/Wine_Quality_Prediction"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Wine_Quality_Prediction?style=flat-square&label=Wine%20Quality&labelColor=161b22&color=8957e5" alt="Top language in Wine Quality Prediction" /></a>
+
+<br/><br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=DharamVeer970&theme=github-compact&bg_color=0d1117&color=c9d1d9&line=8957e5&point=1f6feb&area=true&hide_border=true" />
