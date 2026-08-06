@@ -242,6 +242,20 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 ---
 
+## `>` Contribution graph, eaten
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" />
+  <img src="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" alt="Contribution snake animation" />
+</picture>
+
+</div>
+
+---
+
 ## `>` What's next
 
 ```yaml
