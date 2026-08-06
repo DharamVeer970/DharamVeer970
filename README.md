@@ -17,7 +17,7 @@
 
 ---
 
-## `>` whoami
+## `>` Whoami
 
 ```text
 $ agent.invoke("who is dharam veer?")
@@ -41,7 +41,7 @@ $ agent.invoke("who is dharam veer?")
 
 ---
 
-## `>` how I architect agents
+## `>` How I architect agents
 
 Every system I build follows the same spine: **plan → route → act → remember → critique → repeat.**
 The critic loop is the part most "AI apps" skip — and it's the reason they break in production.
@@ -92,7 +92,7 @@ flowchart TD
 
 ---
 
-## `>` featured work
+## `>` Featured work
 
 ### 🎙️ Wilco — Voice-Controlled Agent for Windows
 
@@ -128,7 +128,7 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 ---
 
-## `>` tech arsenal
+## `>` Tech arsenal
 
 <details open>
 <summary><b>🤖 Agentic AI &amp; LLM</b></summary>
@@ -203,7 +203,7 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 ---
 
-## `>` by the numbers
+## `>` By the numbers
 
 <div align="center">
 
@@ -232,7 +232,7 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 ---
 
-## `>` live agent log
+## `>` Live agent log
 
 > This block isn't hand-written. A scheduled agent ([`scripts/profile_agent.py`](scripts/profile_agent.py))
 > wakes up daily, queries the GitHub API, and rewrites everything between the markers below —
@@ -244,7 +244,7 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 ---
 
-## `>` contribution graph, eaten
+## `>` Contribution graph, eaten
 
 <div align="center">
 
@@ -258,7 +258,7 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 ---
 
-## `>` what's next
+## `>` What's next
 
 ```yaml
 now:
@@ -280,7 +280,7 @@ open_to:
 
 <div align="center">
 
-## `>` let's build something autonomous
+## `>` Let's build something autonomous
 
 <a href="mailto:dharamveeer4@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 <a href="https://www.linkedin.com/in/dharam-veer-657711226/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
