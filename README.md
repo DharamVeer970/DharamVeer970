@@ -41,6 +41,42 @@ $ agent.invoke("who is dharam veer?")
 
 ---
 
+## `>` Featured work
+
+### 🎙️ Wilco — Voice-Controlled Agent for Windows
+
+> Speak to your machine, it acts. Whisper transcribes, an agent loop reasons, **64 tools** touch the real OS.
+
+Not a wrapper around a chat API — a full agent runtime with two execution paths, a safety gate, and real system access.
+
+| | |
+|---|---|
+| **Dual execution** | Instant regex path for common commands, full tool-calling agent loop for everything else — so trivial requests never pay LLM latency |
+| **64 tools** | App control, file ops, PowerShell, web search, email, messaging, window management |
+| **Provider-agnostic** | Cohere, OpenAI, Anthropic, Groq, HuggingFace, Ollama — swapped by config, not code |
+| **MCP server** | Exposes its own toolset over Model Context Protocol to Claude Desktop and other clients |
+| **Safety gates** | Confirmation required before destructive actions — delete, shutdown, send |
+| **Context aware** | Tracks recent searches, active apps, and working directories across turns |
+
+<a href="https://github.com/DharamVeer970/Wilco"><img src="https://img.shields.io/badge/View_Repo-Wilco-1f6feb?style=for-the-badge&logo=github&logoColor=white" alt="View Wilco" /></a>
+<img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white" alt="MCP" />
+
+<br/>
+
+### Also building
+
+| Project | What it does | Stack |
+|---|---|---|
+| **Trading Agent** `private` | Autonomous market-analysis agent — signal ingestion, LLM reasoning over indicators, decision logging | Python · LLM tool calling |
+| [**Cancer Treatment ML**](https://github.com/DharamVeer970/Cancer_treatment_Project) | Classification pipeline for treatment outcome prediction — preprocessing, training, evaluation | scikit-learn · Jupyter |
+| [**Stock Management System**](https://github.com/DharamVeer970/Stock_management_system) | Inventory tracking with full CRUD and persistent storage | Python · SQL |
+| [**ChatGPT Clone**](https://github.com/DharamVeer970/Chatgpt-Clone) | Conversational UI with streaming responses and chat persistence | JS · OpenAI API |
+| [**House Price Prediction**](https://github.com/DharamVeer970/House_Price_Prediction) | Regression modelling with feature engineering and error analysis | pandas · scikit-learn |
+| [**Wine Quality Prediction**](https://github.com/DharamVeer970/Wine_Quality_Prediction) | Multi-class classification on physicochemical features | pandas · scikit-learn |
+
+---
+
 ## `>` How I architect agents
 
 Every system I build follows the same spine: **plan → route → act → remember → critique → repeat.**
@@ -89,42 +125,6 @@ flowchart TD
     class C,FAST check
     class O out
 ```
-
----
-
-## `>` Featured work
-
-### 🎙️ Wilco — Voice-Controlled Agent for Windows
-
-> Speak to your machine, it acts. Whisper transcribes, an agent loop reasons, **64 tools** touch the real OS.
-
-Not a wrapper around a chat API — a full agent runtime with two execution paths, a safety gate, and real system access.
-
-| | |
-|---|---|
-| **Dual execution** | Instant regex path for common commands, full tool-calling agent loop for everything else — so trivial requests never pay LLM latency |
-| **64 tools** | App control, file ops, PowerShell, web search, email, messaging, window management |
-| **Provider-agnostic** | Cohere, OpenAI, Anthropic, Groq, HuggingFace, Ollama — swapped by config, not code |
-| **MCP server** | Exposes its own toolset over Model Context Protocol to Claude Desktop and other clients |
-| **Safety gates** | Confirmation required before destructive actions — delete, shutdown, send |
-| **Context aware** | Tracks recent searches, active apps, and working directories across turns |
-
-<a href="https://github.com/DharamVeer970/Wilco"><img src="https://img.shields.io/badge/View_Repo-Wilco-1f6feb?style=for-the-badge&logo=github&logoColor=white" alt="View Wilco" /></a>
-<img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-<img src="https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white" alt="MCP" />
-
-<br/>
-
-### Also building
-
-| Project | What it does | Stack |
-|---|---|---|
-| **Trading Agent** `private` | Autonomous market-analysis agent — signal ingestion, LLM reasoning over indicators, decision logging | Python · LLM tool calling |
-| [**Cancer Treatment ML**](https://github.com/DharamVeer970/Cancer_treatment_Project) | Classification pipeline for treatment outcome prediction — preprocessing, training, evaluation | scikit-learn · Jupyter |
-| [**Stock Management System**](https://github.com/DharamVeer970/Stock_management_system) | Inventory tracking with full CRUD and persistent storage | Python · SQL |
-| [**ChatGPT Clone**](https://github.com/DharamVeer970/Chatgpt-Clone) | Conversational UI with streaming responses and chat persistence | JS · OpenAI API |
-| [**House Price Prediction**](https://github.com/DharamVeer970/House_Price_Prediction) | Regression modelling with feature engineering and error analysis | pandas · scikit-learn |
-| [**Wine Quality Prediction**](https://github.com/DharamVeer970/Wine_Quality_Prediction) | Multi-class classification on physicochemical features | pandas · scikit-learn |
 
 ---
 
@@ -290,20 +290,6 @@ JavaScript        ░░░░░░░░░░░░░░░░░░░░�
 
 ---
 
-## `>` Contribution graph, eaten
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" />
-  <img src="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" alt="Contribution snake animation" />
-</picture>
-
-</div>
-
----
-
 ## `>` What's next
 
 ```yaml
@@ -321,6 +307,20 @@ open_to:
   - Agentic AI / LLM engineering roles
   - Collaborations on open-source agent tooling
 ```
+
+---
+
+## `>` Contribution graph, eaten
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" />
+  <img src="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" alt="Contribution snake animation" />
+</picture>
+
+</div>
 
 ---
 
