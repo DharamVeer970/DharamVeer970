@@ -242,7 +242,10 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=DharamVeer970&theme=github-light&line=8957e5&point=1f6feb&area=true&hide_border=true" width="100%" alt="Contribution activity graph" />
 </picture>
 
-<img src="https://github-profile-trophy.vercel.app/?username=DharamVeer970&theme=discord&no-frame=true&no-bg=true&margin-w=6&margin-h=6&column=7" alt="Trophies" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=DharamVeer970&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=DharamVeer970&theme=github" alt="GitHub stats" width="100%" />
+</picture>
 
 </div>
 
