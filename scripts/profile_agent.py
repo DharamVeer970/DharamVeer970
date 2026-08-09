@@ -213,7 +213,8 @@ def activity_feed(events: list[dict]) -> list[str]:
 def spotlight(repos: list[dict]) -> list[str]:
     """The most recently touched repo worth showing off."""
     for repo in repos:
-        if repo["name"] in SKIP_REPOS:
+        repo_name = repo.get("name")
+        if not repo_name or repo_name in SKIP_REPOS:
             continue
         desc = repo.get("description") or "_no description yet_"
         meta = [
