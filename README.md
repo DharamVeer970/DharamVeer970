@@ -46,49 +46,11 @@ $ agent.invoke("who is dharam veer?")
 Every system I build follows the same spine: **plan → route → act → remember → critique → repeat.**
 The critic loop is the part most "AI apps" skip — and it's the reason they break in production.
 
-```mermaid
-flowchart TD
-    U(["User · Voice · API"])
-    G{{"Guardrails + Intent Classification"}}
-    FAST["Deterministic Handler<br/>regex · rules · zero LLM cost"]
-    P["Planner Agent<br/>decompose into task graph"]
-    R{"Orchestrator / Router"}
-    A1["Research Agent"]
-    A2["Code Agent"]
-    A3["System / Ops Agent"]
-    T[["Tool Layer<br/>MCP · REST · Shell · DB · Browser"]]
-    M[("Memory<br/>short-term · vector · episodic")]
-    C{"Critic / Reflection"}
-    O(["Final Response"])
+<div align="center">
 
-    U --> G
-    G -->|fast path| FAST
-    G -->|reasoning path| P
-    P --> R
-    R -->|research| A1
-    R -->|build| A2
-    R -->|operate| A3
-    A1 --> T
-    A2 --> T
-    A3 --> T
-    T <--> M
-    T --> C
-    C -->|"incomplete → replan"| P
-    C -->|verified| O
-    FAST --> O
+<img src="assets/agent-architecture.svg" width="100%" alt="Agent architecture: input passes guardrails into either a deterministic fast path or a planner; the planner routes to research, code and system agents that share a tool layer backed by memory; a critic either replans or releases the final response." />
 
-    classDef entry fill:#1f6feb,stroke:none,color:#ffffff
-    classDef brain fill:#8957e5,stroke:none,color:#ffffff
-    classDef tool  fill:#0d7d6c,stroke:none,color:#ffffff
-    classDef check fill:#9e6a03,stroke:none,color:#ffffff
-    classDef out   fill:#238636,stroke:none,color:#ffffff
-
-    class U,G entry
-    class P,R,A1,A2,A3 brain
-    class T,M tool
-    class C,FAST check
-    class O out
-```
+</div>
 
 ---
 
