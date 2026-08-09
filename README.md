@@ -41,19 +41,6 @@ $ agent.invoke("who is dharam veer?")
 
 ---
 
-## `>` How I architect agents
-
-Every system I build follows the same spine: **plan → route → act → remember → critique → repeat.**
-The critic loop is the part most "AI apps" skip — and it's the reason they break in production.
-
-<div align="center">
-
-<img src="assets/agent-architecture.svg" width="100%" alt="Agent architecture: input passes guardrails into either a deterministic fast path or a planner; the planner routes to research, code and system agents that share a tool layer backed by memory; a critic either replans or releases the final response." />
-
-</div>
-
----
-
 ## `>` Featured work
 
 ### 🎙️ Wilco — Voice-Controlled Agent for Windows
@@ -87,6 +74,19 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 | [**ChatGPT Clone**](https://github.com/DharamVeer970/Chatgpt-Clone) | Conversational UI with streaming responses and chat persistence | JS · OpenAI API |
 | [**House Price Prediction**](https://github.com/DharamVeer970/House_Price_Prediction) | Regression modelling with feature engineering and error analysis | pandas · scikit-learn |
 | [**Wine Quality Prediction**](https://github.com/DharamVeer970/Wine_Quality_Prediction) | Multi-class classification on physicochemical features | pandas · scikit-learn |
+
+---
+
+## `>` How I architect agents
+
+Every system I build follows the same spine: **plan → route → act → remember → critique → repeat.**
+The critic loop is the part most "AI apps" skip — and it's the reason they break in production.
+
+<div align="center">
+
+<img src="assets/agent-architecture.svg" width="100%" alt="Agent architecture: input passes guardrails into either a deterministic fast path or a planner; the planner routes to research, code and system agents that share a tool layer backed by memory; a critic either replans or releases the final response." />
+
+</div>
 
 ---
 
@@ -256,20 +256,6 @@ CSS               ██░░░░░░░░░░░░░░░░░░�
 
 ---
 
-## `>` Contribution graph, eaten
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" />
-  <img src="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" alt="Contribution snake animation" />
-</picture>
-
-</div>
-
----
-
 ## `>` What's next
 
 ```yaml
@@ -287,6 +273,20 @@ open_to:
   - Agentic AI / LLM engineering roles
   - Collaborations on open-source agent tooling
 ```
+
+---
+
+## `>` Contribution graph, eaten
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" />
+  <img src="https://raw.githubusercontent.com/DharamVeer970/DharamVeer970/output/github-snake.svg" alt="Contribution snake animation" />
+</picture>
+
+</div>
 
 ---
 
