@@ -115,4 +115,7 @@ for k in N:
 
 out.append("</svg>")
 open("assets/agent-architecture.svg", "w", encoding="utf-8").write("\n".join(out))
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 console
 print(f"✓ wrote assets/agent-architecture.svg — {len(N)} nodes")

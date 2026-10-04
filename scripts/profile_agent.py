@@ -9,7 +9,9 @@ Design constraints:
   * stdlib only — the workflow installs nothing
   * fail soft — if the API is unreachable, leave the README untouched and exit 0
     so a transient outage never shows up as a red X on the profile
-  * idempotent — writes only when the rendered output differs
+  * idempotent — the output contains absolute dates only (no "3h ago", no run
+    timestamp), so the README changes — and a commit happens — only when the
+    underlying data actually changed
 
 Usage:
     python scripts/profile_agent.py            # rewrite README.md in place
@@ -36,13 +38,31 @@ TIMEOUT = 20
 BAR_WIDTH = 34
 TOP_LANGS = 6
 FEED_ROWS = 6
-MAX_AGE_DAYS = 120  # anything older isn't a "recent signal"
+MAX_AGE_DAYS = 120   # anything older isn't a "recent signal"
+MAX_COMPARES = 40    # cap on compare-API lookups per run (rate-limit safety)
 
 # Commits the agent makes itself — never report them back as activity.
 SELF_COMMIT_PREFIX = "chore(profile-agent)"
 
-# Repos that are scaffolding rather than work worth surfacing.
-SKIP_REPOS = {"localrepo", "GIthub-Tutorial", "Test_Remote_Server", USER}
+# Repos that are scaffolding, tutorials or practice exercises rather than work
+# worth surfacing. They are excluded from the spotlight, the feed and the
+# language chart (they still count towards the public-repo total).
+SKIP_REPOS = {
+    USER,                          # this profile repo — README edits aren't a signal
+    "localrepo",
+    "GIthub-Tutorial",
+    "Test_Remote_Server",
+    "ReactsBasics",
+    "Calculator_using_html",
+    "Responsive_Website",
+    "CodeAlpha_Portfolio_Website",
+    "CodeAlpha_Resume_Builder",
+}
+
+# GitHub reports notebooks as their own "language", but a .ipynb is Python code
+# with a different file format. Folding them together describes the work, not
+# the container.
+LANGUAGE_ALIASES = {"Jupyter Notebook": "Python"}
 
 
 # --------------------------------------------------------------------------- #
@@ -72,20 +92,18 @@ def api(path: str) -> list | dict | None:
 # Formatting helpers
 # --------------------------------------------------------------------------- #
 
-def parse_ts(value: str) -> datetime:
-    return datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+def parse_ts(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        return datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
 
 
-def ago(when: datetime) -> str:
-    """'3h ago', '2d ago', '5mo ago' — compact enough for a table cell."""
-    seconds = (datetime.now(timezone.utc) - when).total_seconds()
-    for cutoff, divisor, unit in (
-        (90, 1, "s"), (5400, 60, "m"), (86400, 3600, "h"),
-        (1209600, 86400, "d"), (5184000, 604800, "w"), (31536000, 2592000, "mo"),
-    ):
-        if seconds < cutoff:
-            return f"{max(1, int(seconds // divisor))}{unit} ago"
-    return f"{int(seconds // 31536000)}y ago"
+def fmt_date(when: datetime) -> str:
+    """'03 Oct 2026' — absolute, so it never goes stale on the rendered page."""
+    return when.strftime("%d %b %Y")
 
 
 def plural(n: int, word: str) -> str:
@@ -94,6 +112,67 @@ def plural(n: int, word: str) -> str:
 
 def repo_link(full_name: str) -> str:
     return f"[`{full_name.split('/')[-1]}`](https://github.com/{full_name})"
+
+
+def is_skipped(full_or_short_name: str) -> bool:
+    return full_or_short_name.split("/")[-1] in SKIP_REPOS
+
+
+# --------------------------------------------------------------------------- #
+# Push-event commit counting
+# --------------------------------------------------------------------------- #
+
+class CommitCounter:
+    """Works out how many commits a PushEvent carried.
+
+    GitHub stripped `commits`, `size` and `distinct_size` from PushEvent
+    payloads in the public Events API (late 2025); a push now only carries
+    `before` and `head`. Reading `size` therefore returned 0 for every push and
+    the feed silently dropped all of them. The compare endpoint recovers the
+    real number from the two SHAs.
+    """
+
+    ZERO_SHA = "0" * 40
+
+    def __init__(self) -> None:
+        self.lookups = 0
+        self.cache: dict[tuple[str, str, str], int] = {}
+
+    def count(self, repo: str, payload: dict) -> int:
+        # Legacy payloads (or GitHub restoring the field) — trust it directly.
+        if isinstance(payload.get("size"), int):
+            commits = payload.get("commits") or []
+            if any(str(c.get("message", "")).startswith(SELF_COMMIT_PREFIX) for c in commits):
+                return 0
+            return payload["size"]
+
+        before, head = payload.get("before") or "", payload.get("head") or ""
+        if not head:
+            return 1
+        if not before or before == self.ZERO_SHA:
+            return 1  # brand-new branch: no base to compare against
+
+        key = (repo, before, head)
+        if key in self.cache:
+            return self.cache[key]
+        if self.lookups >= MAX_COMPARES:
+            return 1  # over budget — a push happened, count it once
+
+        self.lookups += 1
+        data = api(f"/repos/{repo}/compare/{before}...{head}")
+        n = 1
+        if isinstance(data, dict):
+            ahead = data.get("ahead_by", data.get("total_commits"))
+            if isinstance(ahead, int):
+                n = ahead
+            commits = data.get("commits") or []
+            if commits and all(
+                str((c.get("commit") or {}).get("message", "")).startswith(SELF_COMMIT_PREFIX)
+                for c in commits
+            ):
+                n = 0
+        self.cache[key] = n
+        return n
 
 
 # --------------------------------------------------------------------------- #
@@ -113,14 +192,15 @@ def language_bar(repos: list[dict]) -> list[str]:
     for repo in repos:
         name = repo.get("language")
         repo_name = repo.get("name")
-        if name and repo_name and repo_name not in SKIP_REPOS:
+        if name and repo_name and not is_skipped(repo_name):
+            name = LANGUAGE_ALIASES.get(name, name)
             counts[name] = counts.get(name, 0) + 1
 
     if not counts:
         return []
 
     grand = sum(counts.values())
-    ranked = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)[:TOP_LANGS]
+    ranked = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[:TOP_LANGS]
     pad = max(len(name) for name, _ in ranked)
 
     rows = ["```text"]
@@ -133,22 +213,26 @@ def language_bar(repos: list[dict]) -> list[str]:
     return rows
 
 
-def activity_feed(events: list[dict]) -> list[str]:
-    """Recent public events, newest first.
-
-    Consecutive pushes to the same repo collapse into a single row with the
-    commit counts summed — six rows of "pushed 1 commit to Wilco" is noise,
-    "pushed 11 commits to Wilco" is a signal.
-    """
+def fresh_events(events: list[dict]) -> list[tuple[datetime, dict]]:
+    """Events inside the MAX_AGE_DAYS window, newest first."""
+    now = datetime.now(timezone.utc)
     fresh = []
     for event in events:
-        try:
-            when = parse_ts(event["created_at"])
-        except (KeyError, ValueError):
-            continue
-        if (datetime.now(timezone.utc) - when).days <= MAX_AGE_DAYS:
+        when = parse_ts(event.get("created_at"))
+        if when and (now - when).days <= MAX_AGE_DAYS:
             fresh.append((when, event))
     fresh.sort(key=lambda pair: pair[0], reverse=True)
+    return fresh
+
+
+def activity_feed(fresh: list[tuple[datetime, dict]]) -> list[str]:
+    """Recent public events, newest first.
+
+    Pushes to the same repo collapse into a single row with the commit counts
+    summed — six rows of "pushed 1 commit to Wilco" is noise, "pushed 11
+    commits to Wilco" is a signal.
+    """
+    counter = CommitCounter()
 
     # Roll up pushes per repo before rendering.
     pushes: dict[str, int] = {}
@@ -156,13 +240,9 @@ def activity_feed(events: list[dict]) -> list[str]:
         if event.get("type") != "PushEvent":
             continue
         repo = (event.get("repo") or {}).get("name", "")
-        payload = event.get("payload") or {}
-        commits = payload.get("commits") or []
-        if not repo or repo.split("/")[-1] in SKIP_REPOS or any(
-            str(c.get("message", "")).startswith(SELF_COMMIT_PREFIX) for c in commits
-        ):
-            continue  # the agent's own commits, and profile-repo housekeeping
-        pushes[repo] = pushes.get(repo, 0) + int(payload.get("size", len(commits)) or 0)
+        if not repo or is_skipped(repo):
+            continue
+        pushes[repo] = pushes.get(repo, 0) + counter.count(repo, event.get("payload") or {})
 
     seen: set[tuple[str, str]] = set()
     rows: list[str] = []
@@ -171,13 +251,13 @@ def activity_feed(events: list[dict]) -> list[str]:
         kind = event.get("type", "")
         repo = (event.get("repo") or {}).get("name", "")
         payload = event.get("payload") or {}
-        if not repo or repo.split("/")[-1] in SKIP_REPOS:
+        if not repo or is_skipped(repo):
             continue  # editing the profile README is not a career signal
 
         if kind == "PushEvent":
             total = pushes.get(repo)
             if not total:
-                continue  # self-commits only, or already rendered
+                continue  # self-commits only
             what = f"pushed **{plural(total, 'commit')}** to"
         elif kind == "CreateEvent" and payload.get("ref_type") == "repository":
             what = "**created**"
@@ -201,36 +281,46 @@ def activity_feed(events: list[dict]) -> list[str]:
             continue
         seen.add(key)
 
-        rows.append(f"| `{ago(when)}` | {what} {repo_link(repo)} |")
+        rows.append(f"| `{fmt_date(when)}` | {what} {repo_link(repo)} |")
         if len(rows) == FEED_ROWS:
             break
 
+    if counter.lookups:
+        print(f"  {counter.lookups} compare lookups for push commit counts")
     if not rows:
         return []
-    return ["| when | what |", "|:--|:--|", *rows]
+    return ["| date | what |", "|:--|:--|", *rows]
 
 
 def spotlight(repos: list[dict]) -> list[str]:
-    """The most recently touched repo worth showing off."""
-    for repo in repos:
-        repo_name = repo.get("name")
-        if not repo_name or repo_name in SKIP_REPOS:
-            continue
-        desc = repo.get("description") or "_no description yet_"
-        meta = [
-            f"`{repo['language']}`" if repo.get("language") else None,
-            f"⭐ {repo['stargazers_count']}" if repo.get("stargazers_count") else None,
-            f"🍴 {repo['forks_count']}" if repo.get("forks_count") else None,
-            f"updated {ago(parse_ts(repo['pushed_at']))}",
-        ]
-        return [
-            f"### 🔦 Currently in the workshop — {repo_link(repo['full_name'])}",
-            "",
-            f"> {desc}",
-            "",
-            " · ".join(m for m in meta if m),
-        ]
-    return []
+    """The most recently touched repo worth showing off.
+
+    Prefers repos that have a description — a spotlight reading "no
+    description yet" undersells the work.
+    """
+    candidates = [
+        r for r in repos
+        if r.get("name") and not is_skipped(r["name"]) and r.get("full_name")
+    ]
+    if not candidates:
+        return []
+    repo = next((r for r in candidates if r.get("description")), candidates[0])
+
+    desc = repo.get("description") or "_no description yet_"
+    pushed = parse_ts(repo.get("pushed_at"))
+    meta = [
+        f"`{repo['language']}`" if repo.get("language") else None,
+        f"⭐ {repo['stargazers_count']}" if repo.get("stargazers_count") else None,
+        f"🍴 {repo['forks_count']}" if repo.get("forks_count") else None,
+        f"last push {fmt_date(pushed)}" if pushed else None,
+    ]
+    return [
+        f"### 🔦 Currently in the workshop — {repo_link(repo['full_name'])}",
+        "",
+        f"> {desc}",
+        "",
+        " · ".join(m for m in meta if m),
+    ]
 
 
 def render() -> str | None:
@@ -242,23 +332,25 @@ def render() -> str | None:
     if not isinstance(repos, list) or not repos:
         return None
 
-    repos = [r for r in repos if not r.get("fork")]
+    repos = [r for r in repos if isinstance(r, dict) and not r.get("fork")]
     stars = sum(r.get("stargazers_count", 0) for r in repos)
-    print(f"  {len(repos)} repos · {stars} stars · {len(events or [])} events")
+    fresh = fresh_events(events if isinstance(events, list) else [])
+    print(f"  {len(repos)} repos · {stars} stars · {len(fresh)} recent events")
 
     blocks: list[list[str]] = []
 
     if shine := spotlight(repos):
         blocks.append(shine)
 
-    if feed := activity_feed(events if isinstance(events, list) else []):
+    if feed := activity_feed(fresh):
         blocks.append(["### 📡 Recent signals", "", *feed])
 
     if bar := language_bar(repos):
         blocks.append([
             "### 🧬 What I actually write",
             "",
-            "<sub>share of public projects by primary language</sub>",
+            "<sub>share of public projects by primary language · notebooks count as "
+            "Python · tutorial and practice repos excluded</sub>",
             "",
             *bar,
         ])
@@ -266,12 +358,21 @@ def render() -> str | None:
     if not blocks:
         return None
 
-    stamp = datetime.now(timezone.utc).strftime("%d %b %Y · %H:%M UTC")
+    # "Data as of" = newest real activity, not the time the job ran. A run
+    # timestamp would change the README on every run and force a daily commit
+    # even when nothing happened.
+    stamps = [parse_ts(r.get("pushed_at")) for r in repos
+              if r.get("name") and not is_skipped(r["name"])]
+    stamps += [when for when, event in fresh
+               if not is_skipped((event.get("repo") or {}).get("name") or USER)]
+    stamps = [s for s in stamps if s]
+
     # A "0 stars" badge on your own profile is worse than saying nothing.
     facts = [f"{len(repos)} public repos"]
     if stars:
         facts.append(plural(stars, "star"))
-    facts.append(f"last run {stamp}")
+    if stamps:
+        facts.append(f"data as of {fmt_date(max(stamps))}")
     blocks.append([
         "<div align=\"right\">",
         "",
@@ -289,6 +390,12 @@ def render() -> str | None:
 # --------------------------------------------------------------------------- #
 
 def main() -> int:
+    # Windows consoles default to cp1252, which can't encode → ✓ ✗ or the bar
+    # glyphs; without this a local run dies on its first print.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true",
                         help="print the rendered section without writing")
@@ -304,7 +411,8 @@ def main() -> int:
         return 0
 
     try:
-        original = open(README, encoding="utf-8").read()
+        with open(README, encoding="utf-8", newline="") as handle:
+            original = handle.read()
     except OSError as exc:
         print(f"✗ cannot read {README}: {exc}", file=sys.stderr)
         return 1
@@ -313,15 +421,20 @@ def main() -> int:
         print(f"✗ markers {START} / {END} not found in {README}", file=sys.stderr)
         return 1
 
+    # Match the file's existing line endings so a local run on Windows doesn't
+    # rewrite every line of the README.
+    newline = "\r\n" if "\r\n" in original else "\n"
+    section = section.replace("\n", newline)
+
     head, _, rest = original.partition(START)
     _, _, tail = rest.partition(END)
-    updated = f"{head}{START}\n\n{section}\n\n{END}{tail}"
+    updated = f"{head}{START}{newline}{newline}{section}{newline}{newline}{END}{tail}"
 
     if updated == original:
         print("✓ already current — nothing to commit")
         return 0
 
-    with open(README, "w", encoding="utf-8") as handle:
+    with open(README, "w", encoding="utf-8", newline="") as handle:
         handle.write(updated)
     print(f"✓ {README} updated")
     return 0

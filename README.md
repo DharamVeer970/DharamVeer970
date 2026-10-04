@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1f6feb,50:8957e5,100:238636&height=180&section=header&text=Dharam%20Veer&fontColor=ffffff&fontSize=52&fontAlignY=34&desc=Agentic%20AI%20Engineer%20%C2%B7%20Multi-Agent%20Systems%20%C2%B7%20AI%20Automation&descAlignY=54&descSize=16&animation=fadeIn" width="100%" alt="Dharam Veer — Agentic AI Engineer" />
 
 <a href="https://github.com/DharamVeer970">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=8957E5&center=true&vCenter=true&width=780&height=45&lines=I+build+agents+that+act%2C+not+chatbots+that+talk.;Multi-agent+orchestration+with+LangGraph+%2B+FastAPI;64-tool+voice+agent+running+on+bare+Windows+APIs;MCP+servers%2C+tool-calling+runtimes%2C+agent+memory" alt="What I build" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=8957E5&center=true&vCenter=true&width=780&height=45&lines=I+build+agents+that+act%2C+not+chatbots+that+talk.;Multi-agent+orchestration+with+LangGraph+%2B+FastAPI;90-tool+voice+agent+running+on+bare+Windows+APIs;Self-healing+DevOps+agents+that+diagnose+and+fix;MCP+servers%2C+tool-calling+runtimes%2C+agent+memory" alt="What I build" />
 </a>
 
 <br/>
@@ -23,7 +23,7 @@
 $ agent.invoke("who is dharam veer?")
 
   planner      → decompose(query) ................... 4 subtasks
-  retriever    → scan(github, projects, shipped) .... 20 repos
+  retriever    → scan(github, projects, shipped) .... 25 repos
   synthesizer  → build_profile() .................... ok
 
 ╭──────────────────────────────────────────────────────────────╮
@@ -31,8 +31,9 @@ $ agent.invoke("who is dharam veer?")
 │  role       Agentic AI Engineer · AI Automation Builder      │
 │  builds     multi-agent systems, tool-calling runtimes,      │
 │             memory-backed workflows, MCP integrations        │
-│  stack      Python · LangGraph · FastAPI · MCP · OpenAI      │
-│  shipping   Wilco — voice agent for Windows, 64 tools        │
+│  stack      Python · LangGraph · FastAPI · MCP · Gemini      │
+│  shipping   Wilco — voice agent for Windows, 90 tools        │
+│  also       self-healing DevOps agent · LinkedIn autopilot   │
 │  belief     an agent is only as good as its tool layer       │
 ╰──────────────────────────────────────────────────────────────╯
 
@@ -45,18 +46,19 @@ $ agent.invoke("who is dharam veer?")
 
 ### 🎙️ Wilco — Voice-Controlled Agent for Windows
 
-> Speak to your machine, it acts. Whisper transcribes, an agent loop reasons, **64 tools** touch the real OS.
+> Speak to your machine, it acts. Whisper transcribes, an agent loop reasons, **90 tools** touch the real OS.
 
 Not a wrapper around a chat API — a full agent runtime with two execution paths, a safety gate, and real system access.
 
 | | |
 |---|---|
 | **Dual execution** | Instant regex path for common commands, full tool-calling agent loop for everything else — so trivial requests never pay LLM latency |
-| **64 tools** | App control, file ops, PowerShell, web search, email, messaging, window management |
+| **90 tools** | Apps, files, folders, volume, brightness, media, Windows settings, controls inside any window, web search, YouTube, PowerShell |
+| **Agent, not parser** | Reads what each tool returned, chains further calls when the job needs them, and falls back to conversation instead of a dead end |
+| **Spoken replies** | Neural text-to-speech with thirteen voice packs, switchable by voice mid-conversation |
 | **Provider-agnostic** | Cohere, OpenAI, Anthropic, Groq, HuggingFace, Ollama — swapped by config, not code |
 | **MCP server** | Exposes its own toolset over Model Context Protocol to Claude Desktop and other clients |
 | **Safety gates** | Confirmation required before destructive actions — delete, shutdown, send |
-| **Context aware** | Tracks recent searches, active apps, and working directories across turns |
 
 <a href="https://github.com/DharamVeer970/Wilco"><img src="https://img.shields.io/badge/View_Repo-Wilco-1f6feb?style=for-the-badge&logo=github&logoColor=white" alt="View Wilco" /></a>
 <img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -64,16 +66,38 @@ Not a wrapper around a chat API — a full agent runtime with two execution path
 
 <br/>
 
-### Also building
+### More agents I've shipped
 
 | Project | What it does | Stack |
 |---|---|---|
+| [**Self-Healing DevOps Agent**](https://github.com/DharamVeer970/Self_Healing_Devops) | Watches a service and runs observe → diagnose → decide → heal → verify → report on loop. The LLM writes the root-cause analysis; deterministic code decides and acts — that split is what keeps the autonomy safe | Python · LangGraph · LLM · no Docker |
+| [**LinkedIn Post Automation**](https://github.com/DharamVeer970/LinkedIN_Post_Automation) | Picks a fresh topic, drafts a post, self-critiques and revises, generates an explainer image, QA-checks the image text with a vision model, then publishes — every 4 days, unattended | Python · LangGraph · Gemini · Cloudflare Workers AI · ChromaDB · GitHub Actions |
 | **Trading Agent** `private` | Autonomous market-analysis agent — signal ingestion, LLM reasoning over indicators, decision logging | Python · LLM tool calling |
+| [**Profile Agent**](scripts/profile_agent.py) | The scheduled agent that keeps the live section of this README current — see below | Python stdlib · GitHub API · GitHub Actions |
+
+### Full-stack builds
+
+| Project | What it does | Stack |
+|---|---|---|
+| [**Reels Aggregator**](https://github.com/DharamVeer970/Reels-aggregator) | One snap-scroll feed that merges YouTube Shorts, Instagram Reels, and Apify-sourced TikTok, Moj and Facebook Reels behind a cached backend | TypeScript · React · Vite · Node.js |
+| [**Orbit To-Do**](https://github.com/DharamVeer970/Todo_List) | Zero-dependency to-do app — recurring tasks, tags, drag-to-reorder, keyboard shortcuts, browser reminders, daily email nudges. No pip, no npm, no build step | Python stdlib · SQLite · vanilla JS |
+| [**Stock Management System**](https://github.com/DharamVeer970/Stock_management_system) | Inventory app with live type-ahead search, add products, and one-click stock adjustments backed by MongoDB | Next.js · React · Tailwind · MongoDB |
+| [**ChatGPT Clone**](https://github.com/DharamVeer970/Chatgpt-Clone) | ChatGPT-style UI wired to the OpenAI API; answers are cached in MongoDB so a repeated question costs no API call | Flask · Tailwind · MongoDB · OpenAI API |
+
+<details>
+<summary><b>Earlier work — machine learning &amp; Java</b></summary>
+<br/>
+
+| Project | What it does | Stack |
+|---|---|---|
 | [**Cancer Treatment ML**](https://github.com/DharamVeer970/Cancer_treatment_Project) | Classification pipeline for treatment outcome prediction — preprocessing, training, evaluation | scikit-learn · Jupyter |
-| [**Stock Management System**](https://github.com/DharamVeer970/Stock_management_system) | Inventory tracking with full CRUD and persistent storage | Python · SQL |
-| [**ChatGPT Clone**](https://github.com/DharamVeer970/Chatgpt-Clone) | Conversational UI with streaming responses and chat persistence | JS · OpenAI API |
 | [**House Price Prediction**](https://github.com/DharamVeer970/House_Price_Prediction) | Regression modelling with feature engineering and error analysis | pandas · scikit-learn |
 | [**Wine Quality Prediction**](https://github.com/DharamVeer970/Wine_Quality_Prediction) | Multi-class classification on physicochemical features | pandas · scikit-learn |
+| [**Iris Flower Classification**](https://github.com/DharamVeer970/Iris_Flower_Classification) | Compares five classifiers on the Iris dataset — most reach 95–100% accuracy | pandas · scikit-learn |
+| [**Brick Breaker**](https://github.com/DharamVeer970/Brick_Breaker_Game) | Breakout arcade game in pure JDK — no external libraries | Java · Swing/AWT |
+| [**ATM Simulator**](https://github.com/DharamVeer970/ATM-Simulated-System) | Desktop ATM — multi-page signup, card + PIN login, deposit, withdrawal, fast cash, mini statement, PIN change | Java Swing · JDBC · MySQL |
+
+</details>
 
 ---
 
@@ -105,6 +129,8 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 ![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
 ![Hugging Face](https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
 ![Whisper](https://img.shields.io/badge/Whisper_STT-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
+![Cloudflare Workers AI](https://img.shields.io/badge/Cloudflare_Workers_AI-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 
 `tool calling` · `function schemas` · `RAG` · `agent memory` · `multi-agent routing` · `reflection loops` · `prompt engineering`
 
@@ -141,6 +167,9 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 <br/>
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
@@ -155,6 +184,7 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6446?style=flat-square&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
@@ -191,11 +221,11 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 <br/>
 
 <a href="https://github.com/DharamVeer970/Wilco"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Wilco?style=flat-square&label=Wilco&labelColor=161b22&color=8957e5" alt="Top language in Wilco" /></a>
-<a href="https://github.com/DharamVeer970/Cancer_treatment_Project"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Cancer_treatment_Project?style=flat-square&label=Cancer%20ML&labelColor=161b22&color=8957e5" alt="Top language in Cancer Treatment ML" /></a>
+<a href="https://github.com/DharamVeer970/Self_Healing_Devops"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Self_Healing_Devops?style=flat-square&label=Self-Healing%20DevOps&labelColor=161b22&color=8957e5" alt="Top language in Self-Healing DevOps Agent" /></a>
+<a href="https://github.com/DharamVeer970/LinkedIN_Post_Automation"><img src="https://img.shields.io/github/languages/top/DharamVeer970/LinkedIN_Post_Automation?style=flat-square&label=LinkedIn%20Agent&labelColor=161b22&color=8957e5" alt="Top language in LinkedIn Post Automation" /></a>
+<a href="https://github.com/DharamVeer970/Reels-aggregator"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Reels-aggregator?style=flat-square&label=Reels%20Aggregator&labelColor=161b22&color=8957e5" alt="Top language in Reels Aggregator" /></a>
+<a href="https://github.com/DharamVeer970/Todo_List"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Todo_List?style=flat-square&label=Orbit%20To-Do&labelColor=161b22&color=8957e5" alt="Top language in Orbit To-Do" /></a>
 <a href="https://github.com/DharamVeer970/Stock_management_system"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Stock_management_system?style=flat-square&label=Stock%20System&labelColor=161b22&color=8957e5" alt="Top language in Stock Management System" /></a>
-<a href="https://github.com/DharamVeer970/Chatgpt-Clone"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Chatgpt-Clone?style=flat-square&label=ChatGPT%20Clone&labelColor=161b22&color=8957e5" alt="Top language in ChatGPT Clone" /></a>
-<a href="https://github.com/DharamVeer970/House_Price_Prediction"><img src="https://img.shields.io/github/languages/top/DharamVeer970/House_Price_Prediction?style=flat-square&label=House%20Prices&labelColor=161b22&color=8957e5" alt="Top language in House Price Prediction" /></a>
-<a href="https://github.com/DharamVeer970/Wine_Quality_Prediction"><img src="https://img.shields.io/github/languages/top/DharamVeer970/Wine_Quality_Prediction?style=flat-square&label=Wine%20Quality&labelColor=161b22&color=8957e5" alt="Top language in Wine Quality Prediction" /></a>
 
 <br/><br/>
 
@@ -221,34 +251,35 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 
 <!-- AGENT-LOG:START -->
 
-### 🔦 Currently in the workshop — [`LinkedIN_Post_Automation`](https://github.com/DharamVeer970/LinkedIN_Post_Automation)
+### 🔦 Currently in the workshop — [`Reels-aggregator`](https://github.com/DharamVeer970/Reels-aggregator)
 
-> Autonomous LinkedIn posting agent — LangGraph-orchestrated pipeline that generates unique AI content + images (Gemini + Cloudflare) and auto-publishes every 4 days via GitHub Actions.
+> A full-stack short-video feed aggregator streaming YouTube Shorts, Instagram Reels, TikTok, and Moj in a unified snap-scroll UI.
 
-`Python` · updated 3d ago
+`TypeScript` · last push 04 Oct 2026
 
 ### 📡 Recent signals
 
-| when | what |
+| date | what |
 |:--|:--|
-| `5w ago` | **open-sourced** [`Self_Healing_Devops`](https://github.com/DharamVeer970/Self_Healing_Devops) |
+| `27 Sep 2026` | pushed **7 commits** to [`LinkedIN_Post_Automation`](https://github.com/DharamVeer970/LinkedIN_Post_Automation) |
+| `19 Sep 2026` | pushed **3 commits** to [`Wilco`](https://github.com/DharamVeer970/Wilco) |
+| `27 Aug 2026` | **open-sourced** [`Self_Healing_Devops`](https://github.com/DharamVeer970/Self_Healing_Devops) |
 
 ### 🧬 What I actually write
 
-<sub>share of public projects by primary language</sub>
+<sub>share of public projects by primary language · notebooks count as Python · tutorial and practice repos excluded</sub>
 
 ```text
-Jupyter Notebook  ██████████░░░░░░░░░░░░░░░░░░░░░░░░   29.4%  5 projects
-Python            ████████░░░░░░░░░░░░░░░░░░░░░░░░░░   23.5%  4 projects
-HTML              ████████░░░░░░░░░░░░░░░░░░░░░░░░░░   23.5%  4 projects
-Java              ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   11.8%  2 projects
-JavaScript        ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    5.9%  1 project
-CSS               ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    5.9%  1 project
+Python      ██████████████████████░░░░░░░░░░░░   64.3%  9 projects
+Java        █████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   14.3%  2 projects
+CSS         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    7.1%  1 project
+JavaScript  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    7.1%  1 project
+TypeScript  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    7.1%  1 project
 ```
 
 <div align="right">
 
-<sub>🤖 generated by <code>profile_agent.py</code> · 22 public repos · last run 03 Oct 2026 · 08:05 UTC</sub>
+<sub>🤖 generated by <code>profile_agent.py</code> · 23 public repos · data as of 04 Oct 2026</sub>
 
 </div>
 
