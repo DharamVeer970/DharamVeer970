@@ -251,16 +251,18 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 
 <!-- AGENT-LOG:START -->
 
-### 🔦 Currently in the workshop — [`Reels-aggregator`](https://github.com/DharamVeer970/Reels-aggregator)
+### 🔦 Currently in the workshop — [`Stock_management_system`](https://github.com/DharamVeer970/Stock_management_system)
 
-> A full-stack short-video feed aggregator streaming YouTube Shorts, Instagram Reels, TikTok, and Moj in a unified snap-scroll UI.
+> Modern, real-time inventory management console built with Next.js 13, React, Tailwind CSS, and MongoDB. Features real-time KPI metrics, command palette search (Ctrl+K), and live activity telemetry.
 
-`TypeScript` · last push 04 Oct 2026
+`JavaScript` · last push 04 Oct 2026
 
 ### 📡 Recent signals
 
 | date | what |
 |:--|:--|
+| `04 Oct 2026` | pushed **2 commits** to [`Stock_management_system`](https://github.com/DharamVeer970/Stock_management_system) |
+| `04 Oct 2026` | pushed **1 commit** to [`Reels-aggregator`](https://github.com/DharamVeer970/Reels-aggregator) |
 | `27 Sep 2026` | pushed **7 commits** to [`LinkedIN_Post_Automation`](https://github.com/DharamVeer970/LinkedIN_Post_Automation) |
 | `19 Sep 2026` | pushed **3 commits** to [`Wilco`](https://github.com/DharamVeer970/Wilco) |
 | `27 Aug 2026` | **open-sourced** [`Self_Healing_Devops`](https://github.com/DharamVeer970/Self_Healing_Devops) |
