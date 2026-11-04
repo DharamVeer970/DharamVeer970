@@ -261,8 +261,6 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 
 | date | what |
 |:--|:--|
-| `04 Oct 2026` | pushed **2 commits** to [`Stock_management_system`](https://github.com/DharamVeer970/Stock_management_system) |
-| `04 Oct 2026` | pushed **1 commit** to [`Reels-aggregator`](https://github.com/DharamVeer970/Reels-aggregator) |
 | `04 Oct 2026` | branched `main` on [`Reels-aggregator`](https://github.com/DharamVeer970/Reels-aggregator) |
 
 ### 🧬 What I actually write
