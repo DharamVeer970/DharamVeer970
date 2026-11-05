@@ -257,12 +257,6 @@ The critic loop is the part most "AI apps" skip — and it's the reason they bre
 
 `Python` · last push 28 Oct 2026
 
-### 📡 Recent signals
-
-| date | what |
-|:--|:--|
-| `04 Oct 2026` | branched `main` on [`Reels-aggregator`](https://github.com/DharamVeer970/Reels-aggregator) |
-
 ### 🧬 What I actually write
 
 <sub>share of public projects by primary language · notebooks count as Python · tutorial and practice repos excluded</sub>
